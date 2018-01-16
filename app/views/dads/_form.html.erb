@@ -1,0 +1,18 @@
+<%= form_with(model: @dad, local: true) do |form| %>
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name, id: :dad_name, class: "form-control", placeholder: "Name this dad", autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= form.label :rating %>
+      <%= form.text_field :rating, id: :dad_rating, class: "form-control" %>
+    </div>
+
+    <div class="btn-grtnoup actions">
+      <%= form.submit "Save", class: "btn btn-success", id: "save-new-project" %>
+      <%= button_tag "Cancel", :type => 'button', class: "btn tbn-default", id: "cancel-new-project" %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Dads</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Rating</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dads.each do |dad| %>
+      <tr>
+        <td><%= dad.name %></td>
+        <td><%= dad.rating %></td>
+        <td><%= link_to 'Show', dad %></td>
+        <td><%= link_to 'Edit', edit_dad_path(dad) %></td>
+        <td><%= link_to 'Destroy', dad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dad', new_dad_path %>
+
+
+<%= render "layouts/projects_section.html" %>
